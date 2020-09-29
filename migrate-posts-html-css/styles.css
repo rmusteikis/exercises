@@ -1,11 +1,21 @@
+@font-face {
+  font-family: Helvetica;
+  src: url('helvetica-light.woff');
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
+  color: #1e1e1e;
   background-color: #eef1f6;
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 300;
 }
 
 h1 {
@@ -17,6 +27,10 @@ p {
   font-size: 16px;
 }
 
+a {
+  color: #3899ec;
+}
+
 span,
 a {
   font-size: 14px;
@@ -25,6 +39,7 @@ a {
 
 .modal {
   margin: 0 auto;
+  margin-top: 50px; /* dev purposes */
   max-width: 600px;
   border-radius: 8px;
   background-color: #fff;
@@ -35,6 +50,7 @@ a {
 .btn {
   border: none;
   color: #fff;
+  font-size: 14px;
   cursor: pointer;
 }
 
@@ -57,6 +73,33 @@ header .btn {
   height: 24px;
   border-radius: 50%;
   background-color: rgba(22, 45, 61, 0.24);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn .btn-close-icon {
+  position: absolute;
+  top: 6px;
+  right: 12px;
+}
+
+.btn-close-icon::before,
+.btn-close-icon::after {
+  position: absolute;
+  width: 1px;
+  height: 11px;
+  display: block;
+  content: " ";
+  background-color: #fff;
+}
+
+.btn-close-icon::before {
+  transform: rotate(45deg);
+}
+
+.btn-close-icon::after {
+  transform: rotate(-45deg);
 }
 
 section {
@@ -69,13 +112,18 @@ section p {
   margin: 14px 0;
 }
 
+section .attention {
+  margin-top: 22px;
+  margin-bottom: 28px;
+}
+
 table {
   width: 100%;
   border-spacing: 0;
 }
 
 table td {
-  padding: 18px 19px;
+  padding: 19px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -101,3 +149,4 @@ footer .btn {
   color: #fff;
   background-color: #3899ec;
 }
+
