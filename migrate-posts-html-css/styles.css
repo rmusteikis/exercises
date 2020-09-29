@@ -1,6 +1,6 @@
 @font-face {
   font-family: Helvetica;
-  src: url('helvetica-light.woff');
+  src: url('helvetica-light.woff') format('woff');
 }
 
 * {
@@ -49,9 +49,13 @@ a {
 
 .btn {
   border: none;
-  color: #fff;
+  color: #efefef;
   font-size: 14px;
   cursor: pointer;
+}
+
+.btn:hover {
+  color: #fff;
 }
 
 header {
@@ -146,7 +150,6 @@ footer .btn {
   width: 98px;
   height: 30px;
   border-radius: 21px;
-  color: #fff;
   background-color: #3899ec;
 }
 
