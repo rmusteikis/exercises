@@ -1,0 +1,96 @@
+@font-face {
+  font-family: Helvetica;
+  src: url('helvetica-light.woff') format('woff');
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  /* for dev purposes */
+  max-width: 1024px;
+  background-color: #efefef;
+}
+
+/* img { */
+  /* width: 100%; */
+  /* height: inherit; */
+  /* object-fit: cover; */
+/* } */
+
+.topbar {
+  height: 54px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgba(22, 45, 61, 0.12), 
+              0 0 6px 0 rgba(22, 45, 61, 0.12);
+}
+
+.topbar .logo {
+  padding: 18px;
+  margin-right: 16px; /* TEMP */
+  border-right: 1px solid #b6c1cd;
+}
+
+.topbar .go-back {
+  margin-right: auto;
+}
+
+.topbar .go-back::before {
+  content: "<";
+  margin-right: 5px;
+}
+
+.topbar .user {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #b6c1cd;
+  border-radius: 50%;
+}
+
+.profile-pic {
+  margin-left: 12px;
+  margin-right: 18px;
+  object-fit: cover;
+}
+
+.topbar .notifications {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topbar .notifications img {
+  height: 14px;
+  width: 12px;
+  opacity: .8;
+}
+
+.topbar .user:hover img {
+  opacity: 1;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  height: calc(100vh - 54px);
+  width: 222px;
+  display: flex;
+  flex-direction: column;
+  background-color: #23263c;
+}
+
+.sidebar span:last-of-type {
+  margin-top: auto;
+}
+
