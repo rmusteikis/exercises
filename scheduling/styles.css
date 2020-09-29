@@ -1,6 +1,6 @@
 @font-face {
   font-family: Helvetica;
-  src: url('helvetica-light.woff') format('woff');
+  src: url('helvetica-light.woff.ttf') format('ttf');
 }
 
 * {
@@ -48,7 +48,7 @@ body {
   font-size: 14px;
 }
 
-.topbar .go-back::before {
+.go-back::before {
   content: "<";
   margin-right: 5px;
 }
@@ -94,10 +94,24 @@ body {
   color: #fff;
   background-color: #23263c;
   font-size: 14px;
+  font-weight: 600;
 }
 
+.sidebar span, 
 .sidebar li {
   padding: 12px 30px;
+}
+
+.sidebar .go-back {
+  padding-top: 36px;
+  padding-bottom: 30px;
+}
+
+.widget-name {
+  padding-top: 9px;
+  padding-bottom: 21px;
+  color: #7a92a5;
+  font-size: 12px;
 }
 
 .sidebar a {
@@ -105,9 +119,17 @@ body {
   text-decoration: none;
 }
 
-.sidebar .active {
-  color: #3899ec;
+.active {
   background-color: #3b3f57;
+}
+
+.active a {
+  color: #3899ec;
+}
+
+.edit {
+  border-top: 1px solid #434567;
+  text-align: center;
 }
 
 .sidebar span:last-of-type {
@@ -118,4 +140,5 @@ body {
   flex: 1;
   background-color: #f0f4f7;
 }
+
 
