@@ -12,7 +12,7 @@
 }
 
 body {
-  color: #1e1e1e;
+  color: #162d3d;
   background-color: #eef1f6;
   font-family: 'Helvetica', sans-serif;
   font-weight: 300;
@@ -29,17 +29,17 @@ p {
 
 a {
   color: #3899ec;
+  text-decoration: none;
 }
 
 span,
 a {
   font-size: 14px;
-  text-decoration: none;
 }
 
 .modal {
   margin: 0 auto;
-  margin-top: 50px; /* dev purposes */
+  margin-top: 50px; /* to look nice */
   max-width: 600px;
   border-radius: 8px;
   background-color: #fff;
@@ -48,8 +48,9 @@ a {
 }
 
 .btn {
-  border: none;
   color: #efefef;
+  border: none;
+  outline: none;
   font-size: 14px;
   cursor: pointer;
 }
@@ -116,7 +117,7 @@ section p {
   margin: 14px 0;
 }
 
-section .attention {
+.attention {
   margin-top: 22px;
   margin-bottom: 28px;
 }
@@ -126,7 +127,7 @@ table {
   border-spacing: 0;
 }
 
-table td {
+td {
   padding: 19px;
   display: flex;
   align-items: center;
@@ -136,7 +137,7 @@ table td {
   border-bottom: 1px solid #ddd;
 }
 
-table tr:first-of-type td {
+tr:first-of-type td {
   border-top: 1px solid #ddd;
 }
 
