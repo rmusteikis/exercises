@@ -2,30 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
   <link rel="stylesheet" href="styles.css">
   <title>Scheduling</title>
 </head>
 <body>
+
   <nav class="topbar">
     <img class="logo" src="images/wix.svg" alt="Wix logo">
-    <span class="go-back">My Sites</span>
+    <span class="go-back"><i class="fas fa-angle-left"></i> My Sites</span>
     <div class="user notifications">
-      <img src="images/bell-solid.svg" alt="notifications pic">
+      <i class="fas fa-bell"></i>
     </div>
-    <img class="user profile-pic" src="images/profile.jpg" alt="Profile pic"></div>
+    <div class="user profile-pic">
+      <img src="images/profile.jpg" alt="Profile pic"></div>
+    </div>
   </nav>
 
   <div class="container">
 
     <nav class="sidebar">
-      <span class="go-back">Main Menu</span>
+      <span class="go-back"><i class="fas fa-angle-left"></i> Main Menu</span>
       <span class="widget-name">BLOG (NEW)</span>
       <ul>
         <li class="active"><a href="#">Posts</a></li>
         <li><a href="#">Categories</a></li>
         <li><a href="#">Author Info</a></li>
       </ul>
-      <span class="edit">Edit Site</span>
+      <span class="btn-edit"><i class="fas fa-pencil-alt"></i> Edit Site</span>
     </nav>
 
     <div class="manage-posts">
@@ -34,19 +38,20 @@
         <button class="btn">Create New Post</button>
       </header>
 
-      <div class="posts-nav">
-        <span>Published (5)</span>
-        <span>Drafts (5)</span>
-        <span>Scheduled (0)</span>
-      </div>
+      <nav class="posts-nav">
+        <ul>
+          <li><a href="">Published (5)</a></li>
+          <li><a href="">Drafts (5)</a></li>
+          <li><a href="">Scheduled (0)</a></li>
+        </ul>
+      </nav>
 
       <div class="posts">
-        <img src="" alt="scheduling image">
+        <img src="images/schedule-image.svg" alt="scheduling image">
         <h3>No Scheduled Posts yet</h3>
         <p>Once you Schedule posts, you'll see them here.</p>
-        <button class="schedule-post">Create New Post</button>
+        <button class="schedule-post"><i class="fas fa-plus"></i> Create New Post</button>
       </div>
-
     </div>
 
   </div>
