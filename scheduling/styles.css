@@ -39,7 +39,7 @@ button {
 
 .go-back,
 .user,
-.edit,
+.btn-edit,
 button {
   cursor: pointer;
 }
