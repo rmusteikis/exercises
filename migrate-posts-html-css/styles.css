@@ -37,6 +37,18 @@ a {
   font-size: 14px;
 }
 
+button {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  cursor: pointer;
+  transition: box-shadow .2s ease-out;
+}
+
+button:hover {
+  box-shadow: 0 0 4px rgba(22, 45, 61, 0.48);
+}
+
 .modal {
   margin: 0 auto;
   margin-top: 50px; /* to look nice */
@@ -49,10 +61,6 @@ a {
 
 .btn {
   color: #efefef;
-  border: none;
-  outline: none;
-  font-size: 14px;
-  cursor: pointer;
 }
 
 .btn:hover {
