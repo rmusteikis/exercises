@@ -14,39 +14,6 @@
 body {
   color: #162d3d;
   background-color: #eef1f6;
-  font-family: 'Helvetica', sans-serif;
-  font-weight: 300;
-}
-
-h1 {
-  font-size: 20px;
-  font-weight: 300;
-}
-
-p {
-  font-size: 16px;
-}
-
-a {
-  color: #3899ec;
-  text-decoration: none;
-}
-
-span,
-a {
-  font-size: 14px;
-}
-
-button {
-  border: none;
-  outline: none;
-  font-size: 14px;
-  cursor: pointer;
-  transition: box-shadow .2s ease-out;
-}
-
-button:hover {
-  box-shadow: 0 0 4px rgba(22, 45, 61, 0.48);
 }
 
 .modal {
@@ -57,17 +24,11 @@ button:hover {
   background-color: #fff;
   box-shadow: 0 8px 8px 0 rgba(22, 45, 61, 0.12),
               0 3px 24px 0 rgba(22, 45, 61, 0.18);
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 300;
 }
 
-.btn {
-  color: #efefef;
-}
-
-.btn:hover {
-  color: #fff;
-}
-
-header {
+.modal-header {
   padding: 20px 30px;
   display: flex;
   justify-content: space-between;
@@ -79,50 +40,46 @@ header {
   overflow: hidden;
 }
 
-header .btn {
+.btn {
   position: relative;
-  left: 12px;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background-color: rgba(22, 45, 61, 0.24);
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: #efefef;
+  border-radius: 50%;
+  background-color: rgba(22, 45, 61, 0.24);
+  border: none;
+  outline: none;
+  font-size: 14px;
+  cursor: pointer;
+  transition: box-shadow .2s ease-out;
 }
 
-.btn .btn-close-icon {
-  position: absolute;
-  top: 6px;
-  right: 12px;
+.modal-header .btn {
+  left: 12px;
 }
 
-.btn-close-icon::before,
-.btn-close-icon::after {
-  position: absolute;
-  width: 1px;
-  height: 11px;
-  display: block;
-  content: " ";
-  background-color: #fff;
+.btn:hover {
+  color: #fff;
+  box-shadow: 0 0 4px rgba(22, 45, 61, 0.48);
 }
 
-.btn-close-icon::before {
-  transform: rotate(45deg);
+.modal-title {
+  font-size: 20px;
+  font-weight: 300;
 }
 
-.btn-close-icon::after {
-  transform: rotate(-45deg);
-}
-
-section {
+.modal-content {
   margin-top: 22px;
   margin-right: 30px;
   margin-left: 30px;
 }
 
-section p {
+.paragraph {
   margin: 14px 0;
+  font-size: 16px;
 }
 
 .attention {
@@ -130,12 +87,12 @@ section p {
   margin-bottom: 28px;
 }
 
-table {
+.import-posts {
   width: 100%;
   border-spacing: 0;
 }
 
-td {
+.post-item {
   padding: 19px;
   display: flex;
   align-items: center;
@@ -145,16 +102,26 @@ td {
   border-bottom: 1px solid #ddd;
 }
 
-tr:first-of-type td {
+.post-item:first-of-type {
   border-top: 1px solid #ddd;
 }
 
-footer {
+.post-link {
+  color: #3899ec;
+  text-decoration: none;
+}
+
+.post-title,
+.post-link {
+  font-size: 14px;
+}
+
+.footer-items {
   display: flex;
   justify-content: flex-end;
 }
 
-footer .btn {
+.footer-items .btn {
   margin: 30px 30px;
   width: 98px;
   height: 30px;
