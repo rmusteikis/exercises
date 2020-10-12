@@ -12,4 +12,6 @@ function handleClick(id) {
     state = initState();
   }
   rerender(state);
+
+  bot(state); // is it the place for a bot?
 }

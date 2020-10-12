@@ -94,6 +94,6 @@ function renderGameStatus(state) {
 function renderGameOver() {
   const div = document.createElement("div");
   div.classList.add("container", "game-over");
-  div.textContent = "GAME OVER";
+  div.textContent = `Player ${!state.player1 ? "1" : "2"} won!`;
   return div;
 }
