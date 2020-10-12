@@ -1,9 +1,9 @@
 // render visuals
 const element = document.querySelector("#root");
 
-function render(state, element) {
+function render(state, element, handleClick) {
   element.append(renderFlags(state.flags));
-  element.append(renderButtons());
+  element.append(renderButtons(handleClick));
   element.append(renderGameStatus(state));
 }
 
@@ -17,6 +17,18 @@ function rerender(state, element) {
 
   element.replaceChild(newGameState, prevGameState);
   element.lastChild.replaceWith(renderGameStatus(state));
+}
+
+// Otherwise cannot properly render pyramid of flags
+function getNestedArray(array) {
+  const nestedArray = [];
+  let firstItem = 0;
+  for (let i = 1; i <= 6; i++) {
+    const arr = array;
+    nestedArray.push(arr.slice(firstItem, firstItem + i));
+    firstItem += i;
+  }
+  return nestedArray;
 }
 
 function renderFlags(array) {
@@ -40,7 +52,7 @@ function renderFlags(array) {
   return div;
 }
 
-function renderButtons() {
+function renderButtons(handleClick) {
   const div = document.createElement("div");
   const button = document.createElement("button");
   button.classList.add("btn");
@@ -63,6 +75,16 @@ function renderButtons() {
   wrapper.appendChild(take1);
   wrapper.appendChild(take2);
   wrapper.appendChild(reset);
+
+  wrapper.onclick = function (event) {
+    if (event.target.nodeName === "BUTTON") {
+      handleClick(event.target.id, element);
+      rerender(state, element);
+
+      element.lastChild.replaceWith(renderGameStatus(state));
+    }
+    event.stopPropagation();
+  };
 
   return wrapper;
 }
