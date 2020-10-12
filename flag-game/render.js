@@ -1,13 +1,13 @@
 // render visuals
 const element = document.querySelector("#root");
 
-function render(state, element, handleClick) {
+function render(state, handleClick) {
   element.append(renderFlags(state.flags));
   element.append(renderButtons(handleClick));
   element.append(renderGameStatus(state));
 }
 
-function rerender(state, element) {
+function rerender(state) {
   const prevGameState = document.querySelector(".container");
   let newGameState = renderFlags(state.flags);
 
@@ -78,10 +78,7 @@ function renderButtons(handleClick) {
 
   wrapper.onclick = function (event) {
     if (event.target.nodeName === "BUTTON") {
-      handleClick(event.target.id, element);
-      rerender(state, element);
-
-      element.lastChild.replaceWith(renderGameStatus(state));
+      handleClick(event.target.id);
     }
     event.stopPropagation();
   };
