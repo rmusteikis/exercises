@@ -1,0 +1,21 @@
+{
+  "name": "tdd-poker",
+  "jest": {
+    "verbose": true
+  },
+  "version": "1.0.0",
+  "description": "Practicing TDD by implementing function to compare two poker hands.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rmusteikis/exercises/tree/tdd-poker"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.5.3"
+  }
+}
