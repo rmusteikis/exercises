@@ -1,68 +1,75 @@
 const _ = require("lodash");
+const { validateHand } = require("./validate-hand.js");
+const { calculateRank } = require("./calculate-rank.js");
+const {
+  separateHandValues,
+  separateHandSuits,
+} = require("./separate-cards-values.js");
 
 function comparePokerHands(a, b) {
-  return true;
-}
+  if (validateHand(a) && validateHand(b)) {
+    const handOne = validateHand(a);
+    const handTwo = validateHand(b);
 
-function validateHand(hand) {
-  if (typeof hand === "string") {
-    const handToString = hand.replace(/\s+/g, "");
-    const handArray = _.chunk(handToString, 2);
-    if (isEachCardValid(handArray)) {
-      return handArray;
+    if (calculateRank(handOne) > calculateRank(handTwo)) {
+      return 1;
+    } else if (calculateRank(handOne) > calculateRank(handTwo)) {
+      return -1;
+    } else {
+      return 0;
     }
-  } else {
-    return () => throwError();
   }
 }
 
-function isEachCardValid(handArray) {
-  const cardValues = [
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "T",
-    "J",
-    "Q",
-    "K",
-    "A",
-  ];
-  const cardSuits = ["S", "H", "D", "C"];
-  const isValidValues = [];
-  const isValidSuits = [];
-
-  for (let card of handArray) {
-    cardValues.includes(card[0]) ? isValidValues.push(true) : "";
-    cardSuits.includes(card[1]) ? isValidSuits.push(true) : "";
-  }
-
-  if (isValidValues.length === 5 && isValidSuits.length === 5) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
-function throwError() {
-  throw new Error("hand is invalid");
-}
+// royal flush
+//  sequence(10 to 14) AND same suits
+//
+// straight flush
+//  sequence(NOT 10 to 14) AND same suits
+//
+// four of a kind
+//  4 same values
+//
+// full house
+//  three of a kind AND pair
+//
+// flush
+//  same suits
+//
+// straight
+//  sequence
+//
+// three of a kind
+//  3 same values
+//
+// two pairs
+//  2 pairs of values
+//
+// pair
+//  2 same values
+//
+// highcard
+//  highest card(s)
 
 module.exports = {
   comparePokerHands,
-  validateHand,
-  isEachCardValid,
 };
 
-// const handArray = ["2H", "3H", "4H", "5H", "6H"];
-// const splitedHandArray = [
-// [2, "H"],
-// [3, "H"],
-// [4, "H"],
-// [5, "H"],
-// [6, "H"],
-// ];
+// function isRoyalFlush(handArray) {
+// const royalFlushValues = ["T", "J", "Q", "K", "A"];
+// const handValues = [];
+// const handSuits = [];
+
+// for (let card of handArray) {
+// handValues.push(card[0]);
+// handSuits.push(card[1]);
+// }
+
+// const equalValues = _.isEqual(handValues.sort(), royalFlushValues.sort());
+// const sameSuits = _.uniq(handSuits).length === 1;
+
+// // cool condition
+// if (equalValues && sameSuits) {
+// return true;
+// }
+// }
