@@ -6,9 +6,12 @@ function comparePokerHands(a, b) {
     const handOne = validateHand(a);
     const handTwo = validateHand(b);
 
-    if (calculateRank(handOne) > calculateRank(handTwo)) {
+    const handOneRank = calculateRank(handOne);
+    const handTwoRank = calculateRank(handTwo);
+
+    if (handOneRank > handTwoRank) {
       return 1;
-    } else if (calculateRank(handOne) < calculateRank(handTwo)) {
+    } else if (handOneRank < handTwoRank) {
       return -1;
     } else {
       return 0;

@@ -11,29 +11,28 @@ function calculateRank(handArray) {
 
   // flush
   if (_.uniq(handSuits).length === 1) {
-    handRank *= 10;
+    handRank **= 10;
   }
 
   // straight
   if (isSequence(handValues)) {
-    handRank *= 10;
+    handRank **= 10;
   }
 
-  // "2S AH 2H AS AC", "2H 3H 5H 6H 7H" => 1
-  // three of a kind
-  const countSuits = _.countBy(handSuits);
   const countValues = _.countBy(handValues);
 
-  const isPair = false;
-
   for (let key in countValues) {
-    // three of a kind
-    if (countValues[key] === 3) {
-      handRank *= 9;
-    }
     // pair
     if (countValues[key] === 2) {
-      handRank *= 8;
+      handRank **= 2;
+    }
+    // three of a kind
+    if (countValues[key] === 3) {
+      handRank **= 5;
+    }
+    // four of a kind
+    if (countValues[key] === 4) {
+      handRank **= 10;
     }
   }
 
