@@ -1,10 +1,6 @@
 const { comparePokerHands } = require("./index.js");
 
 describe("comparePokerHands", () => {
-  let hand;
-  let handOne;
-  let handTwo;
-
   describe("When both hands has same rank", () => {
     it("should return 0", () => {
       expect.assertions(2);

@@ -6,29 +6,39 @@ const {
 
 function calculateRank(handArray) {
   const handSuits = separateHandSuits(handArray);
-  let handRank = _.sum(separateHandValues(handArray));
+  const handValues = separateHandValues(handArray);
+  let handRank = _.sum(handValues);
 
+  // flush
   if (_.uniq(handSuits).length === 1) {
-    return (handRank *= 10);
+    handRank *= 10;
+  }
+
+  // straight
+  if (isSequence(handValues)) {
+    handRank *= 10;
+  }
+
+  // "2S AH 2H AS AC", "2H 3H 5H 6H 7H" => 1
+  // three of a kind
+  const countSuits = _.countBy(handSuits);
+  const countValues = _.countBy(handValues);
+
+  const isPair = false;
+
+  for (let key in countValues) {
+    // three of a kind
+    if (countValues[key] === 3) {
+      handRank *= 9;
+    }
+    // pair
+    if (countValues[key] === 2) {
+      handRank *= 8;
+    }
   }
 
   return handRank;
 }
-
-function getPattern(handArray) {}
-
-const patterns = {
-  royalFlush: [],
-  straightFlush: [],
-  fourOfAKind: [],
-  fullHouse: [],
-  flush: [],
-  straight: [],
-  threeOfAKind: [],
-  twoPairs: [],
-  pair: [],
-  highcard: [],
-};
 
 function isSequence(handValuesArray) {
   const sortedArray = handValuesArray.sort();
@@ -41,4 +51,4 @@ function isSequence(handValuesArray) {
   return true;
 }
 
-module.exports = { calculateRank, isSequence, getPattern };
+module.exports = { calculateRank, isSequence };
