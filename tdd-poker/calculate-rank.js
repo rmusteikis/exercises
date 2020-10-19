@@ -7,24 +7,16 @@ const {
 function calculateRank(handArray) {
   const handSuits = separateHandSuits(handArray);
   const handValues = separateHandValues(handArray);
-  let handRank = _.sum(handValues);
-
-  // flush
-  if (_.uniq(handSuits).length === 1) {
-    handRank **= 10;
-  }
-
-  // straight
-  if (isSequence(handValues)) {
-    handRank **= 10;
-  }
+  const handValuesSum = _.sum(handValues);
+  let handRank = 2;
+  // let handRank = _.sum(handValues);
 
   const countValues = _.countBy(handValues);
 
   for (let key in countValues) {
     // pair
     if (countValues[key] === 2) {
-      handRank **= 2;
+      handRank *= 2;
     }
     // three of a kind
     if (countValues[key] === 3) {
@@ -32,9 +24,24 @@ function calculateRank(handArray) {
     }
     // four of a kind
     if (countValues[key] === 4) {
-      handRank **= 10;
+      handRank **= 11;
     }
   }
+
+  // straight
+  if (isSequence(handValues)) {
+    handRank **= 7;
+  }
+
+  // flush
+  if (_.uniq(handSuits).length === 1) {
+    handRank **= 7;
+  }
+
+  // if (handRank !== handValuesSum) {
+  // handRank += _.max(handValues);
+  // }
+  console.log(`Total: ${handRank}`);
 
   return handRank;
 }
