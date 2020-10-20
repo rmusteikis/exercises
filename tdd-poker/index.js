@@ -8,6 +8,8 @@ function comparePokerHands(a, b) {
 
     const handOneRank = calculateRank(handOne);
     const handTwoRank = calculateRank(handTwo);
+    // console.log("handOne", handOneRank);
+    // console.log("handTwo", handTwoRank);
 
     if (handOneRank > handTwoRank) {
       return 1;
