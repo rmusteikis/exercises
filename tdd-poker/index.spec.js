@@ -12,7 +12,7 @@ describe("comparePokerHands", () => {
 
   describe("When first hand has higher rank", () => {
     it("should return 1", () => {
-      // expect.assertions(9);
+      expect.assertions(11);
       expect(comparePokerHands("2H 3H 4H 5H 6H", "AS AD AC AH JD")).toBe(1);
       expect(comparePokerHands("AS AH 2H AD AC", "JS JD JC JH 3D")).toBe(1);
       expect(comparePokerHands("2S AH 2H AS AC", "2H 3H 5H 6H 7H")).toBe(1);
@@ -21,7 +21,6 @@ describe("comparePokerHands", () => {
       expect(comparePokerHands("2S 3H 4H 5S 6C", "AH AC 5H 6H AS")).toBe(1);
       expect(comparePokerHands("2S 2H 4H 5S 4C", "AH AC 5H 6H 7S")).toBe(1);
       expect(comparePokerHands("4S 5H 6H TS AC", "3S 5H 6H TS AC")).toBe(1);
-      // tie-breakers
       expect(comparePokerHands("TS TH TC 2S 2D", "7S 7H 7C AS AD")).toBe(1);
       expect(comparePokerHands("KS KH 3C 3S 3D", "AS AH 2C 2S 2D")).toBe(1);
       expect(comparePokerHands("TH JH QH KH AH", "2H 3H 4H 5H 6H")).toBe(1);
