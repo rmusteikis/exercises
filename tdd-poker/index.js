@@ -1,15 +1,13 @@
-const { validateHand } = require("./validate-hand.js");
+const { parseHand } = require("./parse-hand.js");
 const { calculateRank } = require("./calculate-rank.js");
 
 function comparePokerHands(a, b) {
-  if (validateHand(a) && validateHand(b)) {
-    const handOne = validateHand(a);
-    const handTwo = validateHand(b);
+  const handOne = parseHand(a);
+  const handTwo = parseHand(b);
 
+  if (handOne && handTwo) {
     const handOneRank = calculateRank(handOne);
     const handTwoRank = calculateRank(handTwo);
-    // console.log("handOne", handOneRank);
-    // console.log("handTwo", handTwoRank);
 
     if (handOneRank > handTwoRank) {
       return 1;
