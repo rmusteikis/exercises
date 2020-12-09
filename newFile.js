@@ -1,7 +1,8 @@
 // New
 function add(a, b) {
   return {
-    letterA: a,
-    letterB: b,
+    num1: a,
+    num2: b,
+    sumLetters: a + b,
   }
 }
