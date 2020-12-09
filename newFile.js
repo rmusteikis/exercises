@@ -2,7 +2,8 @@
 function add(a, b) {
   return {
     // comment
-    letterA: a,
-    letterB: b,
+    num1: a,
+    num2: b,
+    sumLetters: a + b,
   }
 }
