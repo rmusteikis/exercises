@@ -1,5 +1,5 @@
 // index file
-function niceNumber() {
+function niceNumber(NICE_NUMBER) {
   /* todo: get nice number as an argument */
-  console.log(69);
+  console.log(NICE_NUMBER);
 }
