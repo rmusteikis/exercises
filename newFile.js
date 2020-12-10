@@ -1,8 +1,8 @@
 function add(a, b) {
   const sum = a + b;
   return {
-    num1: a + b,
-    num2: num1 + a + b,
+    num1: a,
+    num2: b,
     sumAB: sum,
   }
 }

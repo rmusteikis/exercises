@@ -5,6 +5,7 @@ export function niceNumber(NICE_NUMBER) {
   };
 }
 
-export const arrowed = (69) => {
-  return 0;
+export const arrowed = (arg) => {
+  // todo ok
+  // todo not ok
 }
