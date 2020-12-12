@@ -4,8 +4,3 @@ export function niceNumber(NICE_NUMBER) {
     return NICE_NUMBER;
   };
 }
-
-export const arrowed = (arg) => {
-  // todo ok
-  // todo not ok
-}
